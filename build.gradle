@@ -5,7 +5,9 @@ buildscript {
 
     repositories {
         google()
-        jcenter()
+//        jcenter()
+        gradlePluginPortal()
+        maven { url 'https://repo.grails.org/grails/core/' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.0'
