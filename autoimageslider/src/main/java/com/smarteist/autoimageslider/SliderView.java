@@ -58,6 +58,7 @@ public class SliderView extends FrameLayout
     public static final int AUTO_CYCLE_DIRECTION_RIGHT = 0;
     public static final int AUTO_CYCLE_DIRECTION_LEFT = 1;
     public static final int AUTO_CYCLE_DIRECTION_BACK_AND_FORTH = 2;
+    public static final int AUTO_CYCLE_FORCE_RIGHT = 3;
     public static final String TAG = "Slider View : ";
 
     private final Handler mHandler = new Handler();
@@ -672,6 +673,11 @@ public class SliderView extends FrameLayout
             }
             if (mAutoCycleDirection == AUTO_CYCLE_DIRECTION_RIGHT) {
                 mSliderPager.setCurrentItem(currentPosition == adapterItemsCount - 1 ? 0 : currentPosition + 1, true);
+            }
+            if (mAutoCycleDirection == AUTO_CYCLE_FORCE_RIGHT) {
+                mSliderPager.beginFakeDrag();
+                mSliderPager.fakeDragBy(-300);
+                mSliderPager.endFakeDrag();
             }
         }
         mPreviousPosition = currentPosition;
