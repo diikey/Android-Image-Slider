@@ -675,8 +675,9 @@ public class SliderView extends FrameLayout
                 mSliderPager.setCurrentItem(currentPosition == adapterItemsCount - 1 ? 0 : currentPosition + 1, true);
             }
             if (mAutoCycleDirection == AUTO_CYCLE_FORCE_RIGHT) {
+                float dragDistance = -(getMeasuredWidth() * 0.7f);
                 mSliderPager.beginFakeDrag();
-                mSliderPager.fakeDragBy(-300);
+                mSliderPager.fakeDragBy(dragDistance);
                 mSliderPager.endFakeDrag();
             }
         }
