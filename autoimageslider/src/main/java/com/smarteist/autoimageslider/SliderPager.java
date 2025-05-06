@@ -2598,7 +2598,7 @@ public class SliderPager extends ViewGroup {
             throw new IllegalStateException("No fake drag in progress. Call beginFakeDrag first.");
         }
 
-        if (mAdapter == null) {
+        if (mAdapter == null && mItems.isEmpty()) {
             return;
         }
 
