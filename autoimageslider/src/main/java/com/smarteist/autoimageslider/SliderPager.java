@@ -2566,7 +2566,7 @@ public class SliderPager extends ViewGroup {
             throw new IllegalStateException("No fake drag in progress. Call beginFakeDrag first.");
         }
 
-        if (mAdapter != null) {
+        if (mAdapter != null && !mItems.isEmpty()) {
             final VelocityTracker velocityTracker = mVelocityTracker;
             velocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
             int initialVelocity = (int) velocityTracker.getXVelocity(mActivePointerId);
